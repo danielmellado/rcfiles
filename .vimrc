@@ -59,6 +59,11 @@ map <C-Right> :tabn<cr>
 map <C-Left> :tabp<cr>
 map <C-t> :tabnew<CR>
 
+" Vim-Airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 "Add the virtualenv's site-packages to vim path"
 py << EOF
 import os.path
