@@ -16,6 +16,9 @@ set number
 set title
 set ruler
 
+ " highlight current line
+set cursorline
+
 " open new slip panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
