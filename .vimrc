@@ -8,6 +8,7 @@ syntax enable
 filetype on
 
 " set theme
+set t_Co=256
 set background=dark
 colorscheme bubblegum
 
@@ -18,6 +19,10 @@ set ruler
 
  " highlight current line
 set cursorline
+
+" highlight inc search
+set hlsearch
+set incsearch
 
 " open new slip panes to right and bottom, which feels more natural
 set splitbelow
