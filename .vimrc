@@ -24,6 +24,9 @@ set cursorline
 set hlsearch
 set incsearch
 
+"This clears the 'last search pattern' by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " open new slip panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
