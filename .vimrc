@@ -77,8 +77,12 @@ let g:airline#extensions#tabline#enabled = 1
 
 "vim-gitgutter
 let g:gitgutter_highlight_lines = 1
-let g:gitgutter_realtime = 1
+let g:gitgutter_realtime = 1 82 "vim-tagbar
 
+"vim-tagbar
+nnoremap <silent><F3> :TagbarToggle<CR>
+let g:tagbar_width = 30
+let g:tagbar_autoclose = 1
 
 "Add the virtualenv's site-packages to vim path"
 py << EOF
