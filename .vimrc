@@ -77,7 +77,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 "vim-gitgutter
 let g:gitgutter_highlight_lines = 1
-let g:gitgutter_realtime = 1 82 "vim-tagbar
+let g:gitgutter_realtime = 1
 
 "vim-tagbar
 nnoremap <silent><F3> :TagbarToggle<CR>
