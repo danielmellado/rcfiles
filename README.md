@@ -9,6 +9,6 @@ Needed python packages:
 
 Once cloned, check the submodules for the bundles:
 
-git submodule init --update
+git submodule update --init
 
 After that, copy .vimrc file and .vim directory to your home directory
