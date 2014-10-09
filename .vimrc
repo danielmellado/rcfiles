@@ -53,7 +53,22 @@ set foldmethod=indent
 " inside a method type 'za' to open and close a fold.
 set foldlevel=99  
 
+" Alt + Arrow navigation
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+
 " --- PLUGINS ----
+
+" remaps for vim-uninmpaired
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
 
 " load the plugin indent file for specific file types
 filetype plugin indent on
@@ -76,13 +91,16 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 "vim-gitgutter
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
 let g:gitgutter_realtime = 1
 
 "vim-tagbar
 nnoremap <silent><F3> :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
+
+"vim-isort
+nnoremap <silent><F8> :Isort<CR>
 
 "Add the virtualenv's site-packages to vim path"
 py << EOF
