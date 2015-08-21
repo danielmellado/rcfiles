@@ -12,4 +12,4 @@ Installation
 
 git clone --recursive
 
-After that, move the files to the appropiate files
+After that, move the files to the appropiate paths
