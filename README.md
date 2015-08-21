@@ -7,8 +7,9 @@ Needed python packages:
 * flake8
 * jedi
 
-Once cloned, check the submodules for the bundles:
+Installation
+------------
 
-git submodule update --init
+git clone --recursive
 
-After that, copy .vimrc file and .vim directory to your home directory
+After that, move the files to the appropiate files

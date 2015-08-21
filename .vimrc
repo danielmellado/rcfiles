@@ -20,6 +20,11 @@ set ruler
  " highlight current line
 set cursorline
 
+" disable swap files
+set nobackup       
+set nowritebackup  
+set noswapfile     
+
 " highlight inc search
 set hlsearch
 set incsearch
