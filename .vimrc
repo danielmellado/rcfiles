@@ -10,6 +10,7 @@ filetype on
 " set theme
 set t_Co=256
 set background=dark
+set encoding=utf-8
 colorscheme bubblegum
 
 " show number lines the title of the window and the ruler
