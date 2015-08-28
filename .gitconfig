@@ -5,5 +5,10 @@ email = daniel.mellado@midokura.com
 helper = cache --timeout=600
 [core]
 editor = vim
+excludesfile = ~/.gitignore
+[gitreview]
+username = daniel-mellado
+[push]
+default = simple
 [color]
 ui = true
