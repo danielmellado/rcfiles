@@ -25,17 +25,17 @@ if [ "$TERM" == "xterm" ] || [ "$TERM" == "screen" ] || [ $TERM == "screen-256co
     UNDER=$( tput smul )
     REVRS=$( tput rev )
     export PS1="\[$FGGRN\][\u@\h \[$FGBLU\] \W\[$FGRED\]\$(__git_ps1 \(%s\))\[$FGGRN\]]\$ \[$RESET\]"
-else 
+else
     export PS1="[\u@\h \W\$(__git_ps1 \(%s\))]\$ "
 fi
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-source /usr/bin/virtualenvwrapper.sh 
+source /usr/bin/virtualenvwrapper.sh
 alias ll="ls -l"
 export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export TERM="screen-256color"
+export TERM="xterm-256color"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
