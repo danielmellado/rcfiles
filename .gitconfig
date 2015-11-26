@@ -1,6 +1,6 @@
 [user]
 name = Daniel Mellado
-email = daniel.mellado@midokura.com
+email = dmellado@redhat.com
 [credential]
 helper = cache --timeout=600
 [core]
