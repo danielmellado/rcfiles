@@ -25,9 +25,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
     url = https://github.com/bling/vim-airline
-[submodule ".vim/bundle/vim-python-pep8-indent"]
-	path = .vim/bundle/vim-python-pep8-indent
-	url = https://github.com/hynek/vim-python-pep8-indent.git
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git

@@ -2,7 +2,10 @@
 execute pathogen#infect()
 
 " syntax highlighting
-syntax enable
+" syntax enable
+
+let python_highlight_all=1
+syntax on
 
 " enable file type detection
 filetype on
@@ -10,7 +13,6 @@ filetype on
 " set theme
 set t_Co=256
 set background=dark
-set encoding=utf-8
 colorscheme bubblegum
 
 " show number lines the title of the window and the ruler
@@ -18,13 +20,16 @@ set number
 set title
 set ruler
 
- " highlight current line
+" highlight current line
 set cursorline
 
+" show color column at 80
+set colorcolumn=80
+
 " disable swap files
-set nobackup       
-set nowritebackup  
-set noswapfile     
+set nobackup
+set nowritebackup
+set noswapfile
 
 " highlight inc search
 set hlsearch
@@ -43,11 +48,11 @@ set completeopt=menuone,longest,preview
 
 " lines longer than 80 columns will be broken
 set textwidth=80
-" operation >> indents 4 columns; << unindents 4 columns  
+" operation >> indents 4 columns; << unindents 4 columns
 set shiftwidth=4
-" an hard TAB displays as 4 columns  
+" an hard TAB displays as 4 columns
 set tabstop=4
-" insert spaces when hitting TABs     
+" insert spaces when hitting TABs
 set expandtab
 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set softtabstop=4
@@ -57,7 +62,7 @@ set shiftround
 set autoindent
 set foldmethod=indent
 " inside a method type 'za' to open and close a fold.
-set foldlevel=99  
+set foldlevel=99
 
 " Alt + Arrow navigation
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -65,6 +70,8 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+" Use system clipboard
+set clipboard=unnamed
 
 " --- PLUGINS ----
 
@@ -79,6 +86,11 @@ xmap > ]
 " load the plugin indent file for specific file types
 filetype plugin indent on
 
+" Remove trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Flake8
 " run the Flake8 check every time you write a Python file
 autocmd BufWritePost *.py call Flake8()
@@ -86,6 +98,7 @@ autocmd BufWritePost *.py call Flake8()
 " NERDTree
 " configure NERDTree to close if it's the last tab and maps
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-Right> :tabn<cr>
 map <C-Left> :tabp<cr>
@@ -107,6 +120,12 @@ let g:tagbar_autoclose = 1
 
 "vim-isort
 nnoremap <silent><F8> :Isort<CR>
+
+"vim-ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "Add the virtualenv's site-packages to vim path"
 py << EOF
