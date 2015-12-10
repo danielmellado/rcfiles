@@ -92,6 +92,11 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWritePre * :%s/\s\+$//e
 
+" vim-license
+" Add apache license to new python files
+let g:licenses_copyright_holders_name = 'Red Hat, Inc.'
+autocmd BufNewFile *.py :Apache
+
 " Flake8
 " run the Flake8 check every time you write a Python file
 autocmd BufWritePost *.py call Flake8()
