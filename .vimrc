@@ -53,6 +53,9 @@ filetype plugin indent on    " required
 let python_highlight_all=1
 syntax on
 
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
 " set theme
 set t_Co=256
 set background=dark
