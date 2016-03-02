@@ -1,5 +1,51 @@
-" load pathogen
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" Plugins
+" vim-airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" vim-bubblegum
+Plugin 'baskerville/bubblegum'
+" vim-fugitive
+Plugin 'tpope/vim-fugitive'
+" vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+" vim-NERDTree
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+" vim-tagbar
+Plugin 'majutsushi/tagbar'
+" vim-flake8
+Plugin 'nvie/vim-flake8'
+" vim-python-pep8-indent
+Plugin 'hynek/vim-python-pep8-indent'
+" jedi-vim
+Plugin 'davidhalter/jedi-vim'
+" vim-virtualenv
+Plugin 'jmcantrell/vim-virtualenv'
+" vim-licenses
+Plugin 'antoyo/vim-licenses'
+" vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+" vim-syntastic
+Plugin 'scrooloose/syntastic'
+" vim-tbone
+Plugin 'tpope/vim-tbone'
+" tmuxline
+Plugin 'edkolev/tmuxline.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " syntax highlighting
 " syntax enable
@@ -7,14 +53,11 @@ execute pathogen#infect()
 let python_highlight_all=1
 syntax on
 
-" enable file type detection
-filetype on
-
 " set theme
 set t_Co=256
 set background=dark
 set encoding=utf-8
-colorscheme bubblegum
+colorscheme bubblegum-256-dark
 
 " show number lines the title of the window and the ruler
 set number
@@ -75,18 +118,6 @@ nmap <silent> <A-Right> :wincmd l<CR>
 set clipboard=unnamed
 
 " --- PLUGINS ----
-
-" remaps for vim-uninmpaired
-nmap < [
-nmap > ]
-omap < [
-omap > ]
-xmap < [
-xmap > ]
-
-" load the plugin indent file for specific file types
-filetype plugin indent on
-
 " Remove trailing spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -105,6 +136,8 @@ autocmd BufWritePost *.py call Flake8()
 " configure NERDTree to close if it's the last tab and maps
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map <C-Right> :tabn<cr>
 map <C-Left> :tabp<cr>
@@ -114,6 +147,7 @@ map <C-t> :tabnew<CR>
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
 
 "vim-gitgutter
 let g:gitgutter_highlight_lines = 0
@@ -123,15 +157,6 @@ let g:gitgutter_realtime = 1
 nnoremap <silent><F3> :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
-
-"vim-isort
-nnoremap <silent><F8> :Isort<CR>
-
-"vim-ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "Add the virtualenv's site-packages to vim path"
 py << EOF
