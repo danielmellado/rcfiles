@@ -45,6 +45,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-tbone'
 " tmuxline
 Plugin 'edkolev/tmuxline.vim'
+" LaTeX preview
+Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'tpope/vim-git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
