@@ -15,6 +15,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'baskerville/bubblegum'
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
+" vim-git
+Plugin 'tpope/vim-git'
 " vim-gitgutter
 Plugin 'airblade/vim-gitgutter'
 " vim-NERDTree
