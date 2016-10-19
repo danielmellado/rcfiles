@@ -22,6 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 " vim-NERDTree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdcommenter'
 " vim-tagbar
 Plugin 'majutsushi/tagbar'
 " vim-flake8
@@ -150,6 +151,14 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-Right> :tabn<cr>
 map <C-Left> :tabp<cr>
 map <C-t> :tabnew<CR>
+
+" NERDCommenter
+" Follow python comment style
+let g:NERDDefaultAlign = 'left'
+let g:NERDCompactSexyComs = 1
+let g:NERDAltDelims_python = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 " Vim-Airline
 set laststatus=2
