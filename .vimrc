@@ -48,7 +48,8 @@ Plugin 'tpope/vim-tbone'
 Plugin 'edkolev/tmuxline.vim'
 " LaTeX preview
 Plugin 'xuhdev/vim-latex-live-preview'
-
+" Gerrit plugin
+Plugin 'stargrave/gerrvim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -154,10 +155,12 @@ map <C-t> :tabnew<CR>
 " NERDCommenter
 " Follow python comment style
 let g:NERDDefaultAlign = 'left'
-let g:NERDCompactSexyComs = 1
 let g:NERDAltDelims_python = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+let NERD_j2_alt_style=1
+let g:NERDCustomDelimiters = { 'j2': { 'left': '#' } }
+
 
 " Vim-Airline
 set laststatus=2
