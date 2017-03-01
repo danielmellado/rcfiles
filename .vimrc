@@ -46,10 +46,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-tbone'
 " tmuxline
 Plugin 'edkolev/tmuxline.vim'
+" vim-move
+Plugin 'matze/vim-move'
 " LaTeX preview
 Plugin 'xuhdev/vim-latex-live-preview'
-" Gerrit plugin
-Plugin 'stargrave/gerrvim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
