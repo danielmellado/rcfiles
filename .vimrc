@@ -41,7 +41,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " vim-syntastic
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 " vim-tbone
 Plugin 'tpope/vim-tbone'
 " tmuxline
@@ -140,6 +140,13 @@ autocmd BufNewFile *.py :Apache
 " Flake8
 " run the Flake8 check every time you write a Python file
 autocmd BufWritePost *.py call Flake8()
+
+" vim-move
+let g:move_key_modifier = 'C'
+
+
+" yaml 2 space indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " NERDTree
 " configure NERDTree to close if it's the last tab and maps
