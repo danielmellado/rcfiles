@@ -1,0 +1,37 @@
+[user]
+name = Daniel Mellado
+email = dmellado@redhat.com
+signingkey = 0D175BEAC2BC583E
+[credential]
+helper = cache --timeout=3600
+[core]
+editor = vim
+excludesfile = /home/dmellado/.gitignore
+[gitreview]
+username = daniel-mellado
+[push]
+default = simple
+[color]
+ui = true
+[alias]
+nb = !git checkout --track $(git config branch.$(git rev-parse --abbrev-ref HEAD).remote)/$(git rev-parse --abbrev-ref HEAD) -b
+cs = commit -s
+csa = commit -s -a --amend
+co = checkout
+br = branch
+sn = show --name-only
+pr = pull-request
+[commit]
+gpgsign = True
+[branch]
+autosetuprebase = remote
+[sendemail]
+smtpencryption = tls
+smtpserver = smtp.corp.redhat.com
+smtpserverport = 25
+thread = false
+signoffbycc = false
+suppresscc = all
+suppressfrom = true
+confirm = always
+chainreplyto = false
